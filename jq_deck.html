@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<!-- code copied from w3schools --> 
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#length, #width, #boardLength, #boardWidth").keyup(function () {
+					l = $("#length").val();
+					console.log(l);
+					w = $("#width").val();
+					area = l * w;
+					// assume all boards are 8 ft by 1 ft
+					boardlength = $("#boardLength").val();
+					boardwidth = $("#boardWidth").val();
+					console.log(boardlength);
+					boardwidth = Number(boardwidth);
+					boardlength = Number(boardlength);
+					console.log(boardlength);
+					
+					boards = area / (boardlength * boardwidth); 
+					document.getElementById("numberofboards").innerHTML = boards;
+
+				});
+			});
+			
+			// your mission: modify the code to allow the user to change the dimensions of the boards. 
+			
+		</script>
+	</head>
+	<body>
+	
+		<h1>Calculate Materials for Deck</h1>
+		
+		<form>
+			Size of Deck:<br/>
+			<table>
+				<tr>
+					<td><input type="text" id="length" /></td>
+					<td>x&nbsp;</td>
+					<td><input type="text" id="width" /></td>
+				</tr>
+				<tr>
+					<td colspan = "2">Dimensions of a single board:</td>
+				</tr>
+				<tr>
+					<td><input type="text" id="boardLength" /></td>
+					<td>x&nbsp;</td>
+					<td><input type="text" id="boardWidth" /></td>
+				</tr>
+			</table>
+			
+
+			
+			<!-- assume boards are 8x1 -->
+			<h2>You need <span id="numberofboards">___</span> <span id="boardSize"></span> board(s).</h2>
+		</form>
+
+	</body>
+</html>
